@@ -50,6 +50,11 @@ div.head {
 
 a {
     color: #e3eef3;
+    text-decoration: none;
+}
+
+a.link {
+    text-decoration: underline;
 }
 
 #donate-button {
@@ -85,6 +90,7 @@ h2 {
     border-radius: 8px;
     margin: 5px 0;
     transition: all 0.2s ease-in-out;
+    text-decoration: none;
 }
 
 .btn-sm {
@@ -148,8 +154,31 @@ h2 {
     font-weight: 500;
 }
 
+.card .content {
+    font-size: 16px;
+}
+
 @media screen and (max-width: 999px) {
     h1 {
         font-size: 50px;
+    }
+
+    .card {
+        width: 90%;
+        flex-wrap: wrap;
+    }
+
+    .card .left {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .card .buttons {
+        float: none;
+    }
+
+    .card .buttons .btn-sm {
+        display: block;
+        width: 100%;
     }
 }

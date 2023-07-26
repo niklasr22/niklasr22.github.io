@@ -107,6 +107,11 @@ h2 {
     background-color: #386987;
 }
 
+.dl-version {
+    font-size: 12px;
+    vertical-align: middle;
+}
+
 .background {
     min-height: 100%;
     /*background-image: linear-gradient(to bottom, rgba(42, 165, 232, 0.3), rgba(255, 255, 255, 0));*/

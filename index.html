@@ -27,8 +27,9 @@
           <div class="buttons">
             <a href="https://brightintosh.de"><button class="btn-sm"><i
                   class="fa-solid fa-arrow-up-right-from-square"></i> View website</button></a>
-            <a href="https://github.com/niklasr22/BrightIntosh/releases/latest/download/BrightIntosh.dmg"><button
-                class="btn-sm"><i class="fa-solid fa-download"></i> Download</button></a>
+            <a id="brightintosh-download-link" href="https://github.com/niklasr22/BrightIntosh/releases/latest/"><button
+                class="btn-sm"><i class="fa-solid fa-download"></i> Download<span id="brightintosh-version"
+                  class="dl-version"></span></button></a>
           </div>
         </div>
       </div>
@@ -69,6 +70,17 @@
       <a class="link" href="./legal_notice.html">Legal notice</a>
     </div>
   </div>
+  <script>
+    const downloadLink = document.getElementById("brightintosh-download-link");
+    const version = document.getElementById("brightintosh-version");
+    const url = "https://api.github.com/repos/niklasr22/BrightIntosh/releases/latest";
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        version.innerHTML = " (" + data.tag_name + ")";
+        downloadLink.href = data.assets[0].browser_download_url;
+      });
+  </script>
 </body>
 
 </html>
